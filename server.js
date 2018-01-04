@@ -17,28 +17,27 @@ app.get("/", function(req, res) {
 //   res.send("That's the shop")
 // });
 
-// app.get("/first-template", function(req, res) {
-//   res.render("first-template");
-// });
+app.get("/first-template", function(req, res) {
+  res.render("first-template");
+});
 
 app.get("/content", function(req, res) {
   res.render("content", {
     name: "Authentification",
-    url: "http://www.google.com/auth/google"
+    url: "http://www.google.com/auth/google",
+    page: "/first-template"
   });
 });
 
-// app.get("/dynamic", function(req, res) {
-//   res.render("dynamic", {
-//     user: 
-//     {
-//       name: "Johnny",
-//       age: "20"
-//     }
-//   });
-// });
-
-
+app.get("/dynamic", function(req, res) {
+  res.render("dynamic", {
+    user: 
+    {
+      name: "Johnny",
+      age: "20"
+    }
+  });
+});
 
 app.listen(3000);
 app.use(function(req, res, next) {
