@@ -1,0 +1,12 @@
+html
+  head
+    title= name
+    style
+      include style.css
+  body
+    include ./header.pug 
+    if(user)
+      h1 Hi, #{user.name}
+    else
+      a(href= url) Sign up
+    include ./footer.pug 
